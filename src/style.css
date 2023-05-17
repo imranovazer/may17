@@ -1,7 +1,19 @@
-
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
- 
+ .formChild {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+ }
+ label{
+    margin-bottom: 5px;
+ }
+ .radioGroup {
+    margin-bottom: 20px;
+ }

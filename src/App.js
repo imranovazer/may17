@@ -31,11 +31,9 @@ function App() {
   })
   const formik = useFormik({
     initialValues: {
-      name: '',
-      email: '',
+
       gender: 'Female',
-      password: '',
-      confirmPass: '',
+
 
     },
     validationSchema: formValidation,
@@ -51,18 +49,18 @@ function App() {
         <h1>Form</h1>
         <form onSubmit={formik.handleSubmit}>
           <>
-            <div>
+            <div className='formChild'>
               <label htmlFor="name">Name</label>
               <input id="name" name="name" type="text" onChange={formik.handleChange} value={formik.values.name} />
               <p style={{ color: 'red' }}>{formik.errors?.name}</p>
             </div>
-            <div>
+            <div className='formChild'>
               <label htmlFor="email">Email</label>
               <input id="email" name="email" type="text" onChange={formik.handleChange} value={formik.values.email} />
               <p style={{ color: 'red' }}>{formik.errors?.email}</p>
             </div>
-            <div>
-              <label htmlFor="gender">Gender</label>
+            <div className='radioGroup'>
+              <label htmlFor="gender">Gender :</label>
               <input type='radio' name='gender' value='Male' checked={formik.values.gender === 'Male'}
                 onChange={formik.handleChange} />Male
               <input type='radio' name='gender' value='Female' checked={formik.values.gender === 'Female'}
@@ -70,12 +68,12 @@ function App() {
 
 
             </div>
-            <div>
+            <div className='formChild'>
               <label htmlFor="password">Password</label>
               <input id="password" name="password" type="password" onChange={formik.handleChange} value={formik.values.password} />
               <p style={{ color: 'red' }}>{formik.errors?.password}</p>
             </div>
-            <div>
+            <div className='formChild'>
               <label htmlFor="confirmPass">Confirm password</label>
               <input id="confirmPass" name="confirmPass" type="password" onChange={formik.handleChange} value={formik.values.confirmPass} />
               <p style={{ color: 'red' }}>{formik.errors?.confirmPass}</p>
